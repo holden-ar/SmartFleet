@@ -41,14 +41,14 @@ namespace SmartFleet.WebApi.Models
             return new DispatchModel()
             {
                Id = entity.Id,
-               ContactName = entity.ContactName,
-               ContactAddress = entity.ContactAddress,
-               ContactPhone = entity.ContactPhone,
-               ContactEmail = entity.ContactEmail,
+               //ContactName = entity.ContactName,
+               //ContactAddress = entity.ContactAddress,
+               //ContactPhone = entity.ContactPhone,
+               //ContactEmail = entity.ContactEmail,
                ArrivedAt = entity.ArrivedAt,
                Identifier = entity.Identifier,
-               Latitude = entity.Latitude,
-               Longitude=entity.Longitude,
+               //Latitude = entity.Latitude,
+               //Longitude=entity.Longitude,
                Items = entity.Items.Select( Create)
             };
         }
@@ -106,8 +106,8 @@ namespace SmartFleet.WebApi.Models
                 Identifier = model.Identifier,
                 ArrivedAt = model.ArrivedAt,
                 Id = model.Id,
-                Latitude = model.Latitude,
-                Longitude = model.Longitude,
+                //Latitude = model.Latitude,
+                //Longitude = model.Longitude,
                 Items = model.Items.Select(Parse).ToList()
             };
             return entity;
