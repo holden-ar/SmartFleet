@@ -39,11 +39,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessContracts\IUserService.cs" />
+    <Compile Include="DataContracts\IContactRepository.cs" />
+    <Compile Include="DataContracts\IEntityRepository.cs" />
+    <Compile Include="DataContracts\IRoleRepository.cs" />
     <Compile Include="DataContracts\IRouteRepository.cs" />
+    <Compile Include="DataContracts\IUserRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="BusinessContracts\" />
     <Folder Include="Enums\" />
   </ItemGroup>
   <ItemGroup>

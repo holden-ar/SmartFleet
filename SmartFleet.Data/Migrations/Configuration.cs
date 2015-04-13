@@ -1,4 +1,4 @@
-namespace SmartFleet.Data.Migrations
+namespace SmartFleet.Database.Migrations
 {
     using System;
     using System.Data.Entity;

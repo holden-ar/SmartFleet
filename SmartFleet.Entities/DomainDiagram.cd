@@ -2,6 +2,16 @@
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="SmartFleet.Entities.Dispatch">
     <Position X="6" Y="3.5" Width="1.5" />
+    <AssociationLine Name="Substate" Type="SmartFleet.Entities.DispatchSubState" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="7.5" Y="3.969" />
+        <Point X="9.25" Y="3.969" />
+        <Point X="9.25" Y="3.238" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.417" Y="0.487" />
+      </MemberNameLabel>
+    </AssociationLine>
     <TypeIdentifier>
       <HashCode>RAACAAAAAAAACAAAAEAAAAAAAAAAAEACAAAAQAACAAA=</HashCode>
       <FileName>Dispatch.cs</FileName>
@@ -16,7 +26,7 @@
     </ShowAsCollectionAssociation>
   </Class>
   <Class Name="SmartFleet.Entities.DispatchState">
-    <Position X="11.25" Y="1.75" Width="1.5" />
+    <Position X="11" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAAAAAAAAAAAAAAQAQAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>DispatchState.cs</FileName>
@@ -24,6 +34,11 @@
   </Class>
   <Class Name="SmartFleet.Entities.DispatchSubState">
     <Position X="8.5" Y="1.75" Width="1.5" />
+    <AssociationLine Name="State" Type="SmartFleet.Entities.DispatchState">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.245" Y="0.06" />
+      </MemberNameLabel>
+    </AssociationLine>
     <TypeIdentifier>
       <HashCode>AAACAAAAQAAAAAAAAAAAAAQAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>DispatchSubState.cs</FileName>
@@ -61,7 +76,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="SmartFleet.Entities.DispatchItem">
-    <Position X="8.75" Y="4.5" Width="1.5" />
+    <Position X="8.5" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAgAAAAAA=</HashCode>
       <FileName>DispatchItem.cs</FileName>
@@ -75,14 +90,14 @@
     </TypeIdentifier>
   </Class>
   <Class Name="SmartFleet.Entities.Country">
-    <Position X="3.25" Y="7.5" Width="1.5" />
+    <Position X="3.25" Y="7" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Country.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SmartFleet.Entities.City">
-    <Position X="0.5" Y="5.25" Width="1.5" />
+    <Position X="0.75" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAAAAQAAAAAAAAAAAAAQAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>City.cs</FileName>
@@ -92,7 +107,7 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="SmartFleet.Entities.State">
-    <Position X="0.5" Y="7.5" Width="1.5" />
+    <Position X="0.75" Y="7" Width="1.5" />
     <TypeIdentifier>
       <HashCode>EAACAAAAAAAAAAAAAAAAAAQAAAIQAAAAAAAAAAAAAAA=</HashCode>
       <FileName>State.cs</FileName>
@@ -102,7 +117,7 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="SmartFleet.Entities.Address">
-    <Position X="3.25" Y="4.75" Width="1.5" />
+    <Position X="3.25" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAEAAAAAIAEAIAAAAAAAAAAABAAIAAAAAAAA=</HashCode>
       <FileName>Address.cs</FileName>

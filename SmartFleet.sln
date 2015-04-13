@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartFleet.WebApi", "SmartF
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartFleet.Data", "SmartFleet.Data\SmartFleet.Data.csproj", "{368A0B02-6572-42F5-8D00-7FEA340B67B2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartFleet.Web", "SmartFleet.Web\SmartFleet.Web.csproj", "{EA7B4F92-1B1F-4219-89CC-93DC948BC69B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartFleet.Business", "SmartFleet.Business\SmartFleet.Business.csproj", "{8CA3FCF9-D30A-47A9-AC27-3D7AC04E9EAE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{368A0B02-6572-42F5-8D00-7FEA340B67B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{368A0B02-6572-42F5-8D00-7FEA340B67B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{368A0B02-6572-42F5-8D00-7FEA340B67B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA7B4F92-1B1F-4219-89CC-93DC948BC69B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA7B4F92-1B1F-4219-89CC-93DC948BC69B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA7B4F92-1B1F-4219-89CC-93DC948BC69B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA7B4F92-1B1F-4219-89CC-93DC948BC69B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CA3FCF9-D30A-47A9-AC27-3D7AC04E9EAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CA3FCF9-D30A-47A9-AC27-3D7AC04E9EAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CA3FCF9-D30A-47A9-AC27-3D7AC04E9EAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CA3FCF9-D30A-47A9-AC27-3D7AC04E9EAE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

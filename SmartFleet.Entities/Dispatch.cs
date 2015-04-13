@@ -19,8 +19,8 @@ namespace SmartFleet.Entities
         [Required]
         [StringLength(30)]
         public string Identifier { get; set; }
-        public int SubstateId { get; set; }
-        public int AddressId { get; set; }
+        public int? SubstateId { get; set; }
+        public int? AddressId { get; set; }
         public DateTime ArrivedAt { get; set; }
         
 
