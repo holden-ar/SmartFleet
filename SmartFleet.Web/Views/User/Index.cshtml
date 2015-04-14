@@ -1,57 +1,120 @@
 ﻿@model IEnumerable<SmartFleet.Entities.Security.User>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Manage User";
 }
 
-<h2>Index</h2>
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN SAMPLE FORM PORTLET-->
+        <div class="portlet light">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-cogs font-green-sharp"></i>
+                    <span class="caption-subject font-green-sharp bold uppercase">User List</span>
+                </div>
+                
+            </div>
+            <div class="portlet-body form">
+                <p>
+                    @Html.ActionLink("Create New", "Create")
+                </p>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Username)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Passwd)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Email)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Enabled)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IsBuiltInUser)
-        </th>
-        <th></th>
-    </tr>
+                <table class="table">
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Username)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Passwd)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Enabled)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IsBuiltInUser)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
+                    <tr>
 
-</table>
+                        <th>
+
+                            @Html.DisplayNameFor(model => model.Username)
+
+                        </th>
+
+                        <th>
+
+                            @Html.DisplayNameFor(model => model.Passwd)
+
+                        </th>
+
+                        <th>
+
+                            @Html.DisplayNameFor(model => model.Email)
+
+                        </th>
+
+                        <th>
+
+                            @Html.DisplayNameFor(model => model.Enabled)
+
+                        </th>
+
+                        <th>
+
+                            @Html.DisplayNameFor(model => model.IsBuiltInUser)
+
+                        </th>
+
+                        <th></th>
+
+                    </tr>
+
+
+
+                    @foreach (var item in Model)
+                    {
+
+                        <tr>
+
+                            <td>
+
+                                @Html.DisplayFor(modelItem => item.Username)
+
+                            </td>
+
+                            <td>
+
+                                @Html.DisplayFor(modelItem => item.Passwd)
+
+                            </td>
+
+                            <td>
+
+                                @Html.DisplayFor(modelItem => item.Email)
+
+                            </td>
+
+                            <td>
+
+                                @Html.DisplayFor(modelItem => item.Enabled)
+
+                            </td>
+
+                            <td>
+
+                                @Html.DisplayFor(modelItem => item.IsBuiltInUser)
+
+                            </td>
+
+                            <td>
+
+                                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+
+                                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+
+                                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+
+                            </td>
+
+                        </tr>
+
+                    }
+
+
+
+                </table>
+
+            </div>
+        </div>
+        <!-- END SAMPLE FORM PORTLET-->
+    </div>   
+</div>
