@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace SmartFleet.Core.DataContracts
 {
-    public interface IEntityRepository<T> : IDisposable
+    public interface IEntityRepository<T,K> : IDisposable
     {
         IQueryable<T> All { get; }
         IQueryable<T> AllIncluding(params Expression<Func<T, object>>[] includeProperties);
-        T Find(int id);
+        T Find(K id);
         void InsertOrUpdate(T entity);
-        void Delete(int id);
+        void Delete(K id);
         void Save();
 
     }

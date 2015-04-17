@@ -1,0 +1,24 @@
+﻿@model SmartFleet.Web.Models.UserAddEditViewModel
+
+
+
+
+         @foreach (var role in Model.Roles)
+         {
+            <div>
+
+                <input type="checkbox"
+                       name="SelectedRoles"
+                       value="@role.Id"
+                       id="@role.Id"
+                       @{if (Model.SelectedRoles.Contains(role.Id)) { <text> checked='checked' </text>    } } />
+
+                <label for="@role.Id">@role.Name</label>
+
+                @*<label><div class="checker disabled"><span><input type="checkbox" disabled=""></span></div> Disabled</label>*@
+            </div>
+         }
+
+
+
+    @Html.ValidationMessageFor(model => model.SelectedRoles, "", new { @class = "text-danger" })

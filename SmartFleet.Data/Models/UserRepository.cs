@@ -17,12 +17,14 @@ namespace SmartFleet.Database.Models
         {
             _context = context;
         }
-        IQueryable<User> IEntityRepository<User>.All
+
+
+        public IQueryable<User> All
         {
             get { return _context.Users; }
         }
 
-        IQueryable<User> IEntityRepository<User>.AllIncluding(params System.Linq.Expressions.Expression<Func<User, object>>[] includeProperties)
+        public IQueryable<User> AllIncluding(params System.Linq.Expressions.Expression<Func<User, object>>[] includeProperties)
         {
             IQueryable<User> query = _context.Users;
             foreach (var includeProperty in includeProperties)
@@ -32,17 +34,16 @@ namespace SmartFleet.Database.Models
             return query;
         }
 
-        User IEntityRepository<User>.Find(int id)
+        public User Find(int id)
         {
-            //var entity = _context.Users.Find(id);
             var entity = _context.Users.Where(u => u.Id == id)
-                    .Include(u=>u.Roles.Select(r=>r.Grants))
-                    .FirstOrDefault();
-            
+                   .Include(u => u.Roles.Select(r => r.Grants))
+                   .FirstOrDefault();
+
             return entity;
         }
 
-        void IEntityRepository<User>.InsertOrUpdate(User entity)
+        public void InsertOrUpdate(User entity)
         {
             if (entity.Id == default(int))
             {
@@ -56,18 +57,18 @@ namespace SmartFleet.Database.Models
             }
         }
 
-        void IEntityRepository<User>.Delete(int id)
+        public void Delete(int id)
         {
             var contact = _context.Users.Find(id);
             _context.Users.Remove(contact);
         }
 
-        void IEntityRepository<User>.Save()
+        public void Save()
         {
             _context.SaveChanges();
         }
 
-        void IDisposable.Dispose()
+        public void Dispose()
         {
             _context.Dispose();
         }

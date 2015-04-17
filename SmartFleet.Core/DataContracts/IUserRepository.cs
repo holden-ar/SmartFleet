@@ -7,7 +7,7 @@ using SmartFleet.Entities.Security;
 
 namespace SmartFleet.Core.DataContracts
 {
-    public interface IUserRepository :IEntityRepository<User>
+    public interface IUserRepository :IEntityRepository<User, Int32>
     {
     }
 }

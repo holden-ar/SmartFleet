@@ -7,7 +7,7 @@ using SmartFleet.Entities.Security;
 
 namespace SmartFleet.Core.DataContracts
 {
-    public interface IRoleRepository :IEntityRepository<Role>
+    public interface IRoleRepository : IEntityRepository<Role, Int32>
     {
     }
 }

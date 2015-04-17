@@ -25,16 +25,17 @@ namespace SmartFleet.Data
 
         public IQueryable<Route> GetRoutes(bool deepload=false)
         {
+            var routes = _ctx.Routes;
             if (deepload)
-                return _ctx.Routes
-                                .Include("Dispatches")
-                                .Include("Driver")
-                                .Include("Dispatches.Items")
-                                .Include("Truck");
-            
-            else
+            {
+                routes 
+                    .Include(r => r.Dispatches)
+                    .Include(r => r.Driver)
+                    .Include(r => r.Dispatches.Select(d => d.Items))
+                    .Include(r => r.Truck);
 
-                return _ctx.Routes;
+            }
+            return _ctx.Routes;
         }
 
         public bool AddDispatch(Dispatch dispatch)
@@ -44,7 +45,7 @@ namespace SmartFleet.Data
                 _ctx.Dispatches.Add(dispatch);
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -59,7 +60,6 @@ namespace SmartFleet.Data
             catch (Exception ex)
             {
                 throw ex;
-                return false;
             }
         }
 

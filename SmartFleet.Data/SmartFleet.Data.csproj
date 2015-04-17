@@ -50,6 +50,7 @@
     <Compile Include="Extensions.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ContactRepository.cs" />
+    <Compile Include="Models\RoleRepository.cs" />
     <Compile Include="Models\UserRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RouteRepository.cs" />

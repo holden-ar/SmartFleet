@@ -3,18 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
 using SmartFleet.Business;
+using SmartFleet.Core.BusinessContracts;
 using SmartFleet.Entities.Security;
 using SmartFleet.Web.Models;
+using AutoMapper;
 
 namespace SmartFleet.Web.Controllers
 {
     public class UserController : Controller
     {
-        private readonly UserService _service;
-        public UserController(UserService service)
+        private readonly IUserService _service;
+        private readonly IRoleService _roleService;
+        public UserController(IUserService service, IRoleService roleService)
         {
             _service = service;
+            _roleService = roleService;
         }
 
         // GET: User
@@ -25,34 +30,37 @@ namespace SmartFleet.Web.Controllers
 
         public ActionResult Create()
         {
-            var user = _service.Find(1);
+           
+                var model = new UserAddEditViewModel();
+                var r = _roleService.GetAll();
+                model.Roles = Mapper.Map<List<Role>,List<RoleViewModel>>(r);
+                model.SelectedRoles = new List<int>() {1,2};
+     
+                return View(model);
 
+            
 
-            return View(new UserAddEditModel());
+            
+            
         }
 
         [HttpPost]
-        public ActionResult Create(UserAddEditModel model)
+        public ActionResult Create(UserAddEditViewModel viewModel)
         {
-            try
+            if (ModelState.IsValid)
             {
-                //todo: map with automapper
-                var entity = new User()
+                try
                 {
-                    Id = model.Id,
-                    Username = model.Username,
-                    Passwd = model.Passwd,
-                    Email = model.Email,
-                    IsBuiltInUser = model.IsBuiltInUser,
-                    Enabled = model.Enabled
-                };
-                _service.Add(entity);
-                return RedirectToAction("Index");
+                    var entity = Mapper.Map<UserAddEditViewModel, User>(viewModel);
+                    _service.Add(entity);
+                    return RedirectToAction("Index");
+                }
+                catch
+                {
+                    return View();
+                }
             }
-            catch
-            {
-                return View();
-            }
+            return View();
         }
 
 
@@ -60,33 +68,33 @@ namespace SmartFleet.Web.Controllers
         public ActionResult Edit(int id)
         {
             var entity = _service.Find(id);
-            var model = new UserAddEditModel()
+            var model = new UserAddEditViewModel()
             {
                 Id = entity.Id,
                 Username = entity.Username,
                 Passwd = entity.Passwd,
                 Email = entity.Email,
                 IsBuiltInUser = entity.IsBuiltInUser,
-                Enabled = entity.Enabled
+                Enabled = entity.Enabled,
             };
             return View(model);
         }
 
         // POST: Demo/Edit/5
         [HttpPost]
-        public ActionResult Edit(UserAddEditModel model)
+        public ActionResult Edit(UserAddEditViewModel viewModel)
         {
             try
             {
                 //todo: map with automapper
                 var entity = new User()
                 {
-                    Id = model.Id,
-                    Username = model.Username,
-                    Passwd = model.Passwd,
-                    Email = model.Email,
-                    IsBuiltInUser = model.IsBuiltInUser,
-                    Enabled = model.Enabled
+                    Id = viewModel.Id,
+                    Username = viewModel.Username,
+                    Passwd = viewModel.Passwd,
+                    Email = viewModel.Email,
+                    IsBuiltInUser = viewModel.IsBuiltInUser,
+                    Enabled = viewModel.Enabled
                 };
                 _service.Edit(entity);
                 return RedirectToAction("Index");

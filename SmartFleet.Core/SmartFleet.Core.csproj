@@ -39,6 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessContracts\IEntityService.cs" />
+    <Compile Include="BusinessContracts\IRoleService.cs" />
     <Compile Include="BusinessContracts\IUserService.cs" />
     <Compile Include="DataContracts\IContactRepository.cs" />
     <Compile Include="DataContracts\IEntityRepository.cs" />

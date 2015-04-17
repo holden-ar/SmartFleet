@@ -38,15 +38,25 @@ namespace SmartFleet.Business
             return _repository.Find(id);
         }
 
-        public void Edit(User user)
+        public void Edit(User entity)
         {
-            _repository.InsertOrUpdate(user);
+            _repository.InsertOrUpdate(entity);
             _repository.Save();
         }
 
         public void Delete(int id)
         {
            _repository.Delete(id);
+        }
+
+        public List<User> GetAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Dispose()
+        {
+            _repository.Dispose();
         }
     }
 }

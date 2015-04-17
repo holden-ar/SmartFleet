@@ -74,6 +74,10 @@ namespace SmartFleet.Web.App_Start
             kernel.Bind<IUserService>().To<UserService>().InRequestScope();
             kernel.Bind<IUserRepository>().To<UserRepository>().InRequestScope();
 
+
+            kernel.Bind<IRoleService>().To<RoleService>().InRequestScope();
+            kernel.Bind<IRoleRepository>().To<RoleRepository>().InRequestScope();
+
         }        
     }
 }

@@ -7,7 +7,7 @@ using SmartFleet.Entities;
 
 namespace SmartFleet.Core.DataContracts
 {
-    public interface IContactRepository : IEntityRepository<Contact>
+    public interface IContactRepository : IEntityRepository<Contact, Int32>
     {
 
     }
